@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "miaoyinjun-blog",
+  "name": "blog",
   "main": "./src/server.ts",
   "compatibility_date": "2026-05-24",
   "compatibility_flags": ["nodejs_compat"],
@@ -11,8 +11,8 @@
     "crons": ["0 9 * * *"],
   },
   "vars": {
-    "VITE_BASE_URL": "https://miaoyinjun-blog.miaoyinjun.workers.dev",
-    "CMS_PUBLIC_SITE_URL": "https://miaoyinjun-blog.miaoyinjun.workers.dev",
+    "VITE_BASE_URL": "https://blog.miaoyinjun.workers.dev",
+    "CMS_PUBLIC_SITE_URL": "https://blog.miaoyinjun.workers.dev",
     "CMS_BACKUP_RETENTION_DAYS": "30",
     "CMS_EMAIL_SENDING_ENABLED": "false",
     "CMS_EMAIL_FROM": "",
@@ -23,7 +23,7 @@
   "d1_databases": [
     {
       "binding": "CMS_DB",
-      "database_name": "miaoyinjun-blog-cms",
+      "database_name": "blog-cms",
       "database_id": "f0a19b4e-13d7-4625-9b9d-97630155a4cc",
       "migrations_dir": "../../packages/db/migrations",
     },
@@ -31,7 +31,7 @@
   "r2_buckets": [
     {
       "binding": "CMS_STORAGE",
-      "bucket_name": "miaoyinjun-blog-assets",
+      "bucket_name": "blog-assets",
     },
   ],
   "kv_namespaces": [
