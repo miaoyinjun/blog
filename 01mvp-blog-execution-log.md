@@ -13,7 +13,7 @@ Run date: 2026-09-23
 - Theme / layout: `maker` / `shelf`
 - Comments: enabled
 - Email Sending: disabled
-- R2: disabled (reduced setup — Cloudflare account has not enabled R2 yet)
+- R2: enabled
 - GitHub Actions: disabled
 - Domain: `*.workers.dev` (no custom domain)
 
@@ -23,7 +23,7 @@ Run date: 2026-09-23
 - Worker: `miaoyinjun-blog`
 - D1: `miaoyinjun-blog-cms` (`f0a19b4e-13d7-4625-9b9d-97630155a4cc`)
 - KV: `CMS_CACHE` (`6a32ec96f3a240969475f7f3cfe86b06`)
-- R2 storage: not created (API code 10042 — enable R2 in Dashboard first)
+- R2 storage: `miaoyinjun-blog-assets`
 
 ## GitHub
 
@@ -46,6 +46,10 @@ Updated site settings via PUT /api/site.
 Published first bilingual post via POST /api/posts.
 Submitted and approved a verification comment.
 Verified public pages, RSS, sitemap, robots, OpenAPI, and JSON export.
+User enabled R2 in the Cloudflare Dashboard.
+Created R2 bucket miaoyinjun-blog-assets, restored CMS_STORAGE binding, and redeployed.
+Uploaded verification SVG via POST /api/assets.
+Created ZIP backup via POST /api/backups.
 ```
 
 Secrets were stored outside the repository under `%TEMP%\miaoyinjun-blog-secrets` during the run and are not part of this log.
@@ -55,8 +59,8 @@ Secrets were stored outside the repository under `%TEMP%\miaoyinjun-blog-secrets
 - First post: `https://miaoyinjun-blog.miaoyinjun.workers.dev/blog/hello-from-generated-01mvp-blog-starter`
 - Chinese API response included `来自 Skill 生成站点的第一篇文章`.
 - Approved comment rendered on the post page: `This comment verifies the generated demo moderation flow.`
-- R2 asset upload skipped (R2 not enabled).
-- ZIP backup skipped (R2 not enabled). JSON export via `GET /api/export` succeeded.
+- R2 asset URL matched `/uploads/2026/09/...svg` and returned HTTP 200.
+- R2 ZIP backup matched `exports/2026/09/...01mvp-blog-starter...zip`.
 
 ## Verification
 

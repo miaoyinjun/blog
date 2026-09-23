@@ -28,6 +28,5 @@
   "emailSendingEnabled": false,
   "emailVerificationEnabled": false,
   "githubActionsEnabled": false,
-  "r2Enabled": false,
-  "r2ReducedSetupReason": "Cloudflare account has not enabled R2 yet (API code 10042). Image upload, import, export, and ZIP backups are unavailable until R2 is enabled and bucket miaoyinjun-blog-assets is created."
+  "r2Enabled": true
 }

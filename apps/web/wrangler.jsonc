@@ -10,9 +10,6 @@
   "triggers": {
     "crons": ["0 9 * * *"],
   },
-  // R2 omitted until the account enables R2 in the Cloudflare Dashboard.
-  // After enabling, create bucket miaoyinjun-blog-assets and restore:
-  // "r2_buckets": [{ "binding": "CMS_STORAGE", "bucket_name": "miaoyinjun-blog-assets" }],
   "vars": {
     "VITE_BASE_URL": "https://miaoyinjun-blog.miaoyinjun.workers.dev",
     "CMS_PUBLIC_SITE_URL": "https://miaoyinjun-blog.miaoyinjun.workers.dev",
@@ -29,6 +26,12 @@
       "database_name": "miaoyinjun-blog-cms",
       "database_id": "f0a19b4e-13d7-4625-9b9d-97630155a4cc",
       "migrations_dir": "../../packages/db/migrations",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "CMS_STORAGE",
+      "bucket_name": "miaoyinjun-blog-assets",
     },
   ],
   "kv_namespaces": [
